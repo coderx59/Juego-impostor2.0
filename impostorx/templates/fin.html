@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fin de la ronda</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Todos los roles fueron asignados.</h2>
+    <p>¿Quieres jugar otra ronda?</p>
+    <form method="POST" action="/otra_ronda">
+        <button type="submit">Sí, otra ronda</button>
+    </form>
+    <form action="/fin_juego">
+        <button type="submit">No, terminar juego</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turno del participante</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        let contador = 5;
+        function iniciarContador() {
+            const elemento = document.getElementById("contador");
+            const rolDiv = document.getElementById("rol");
+            const intervalo = setInterval(() => {
+                elemento.textContent = "Esto se borrará en " + contador + " segundos";
+                contador--;
+                if (contador < 0) {
+                    clearInterval(intervalo);
+                    elemento.textContent = "¡Listo!";
+                    rolDiv.style.display = "none";
+                }
+            }, 1000);
+        }
+        window.onload = iniciarContador;
+    </script>
+</head>
+<body>
+    <h2>Turno del participante {{ numero }}</h2>
+    <p id="contador" style="font-size: 24px; color: orange;"></p>
+    <div id="rol">
+        {% if rol == "impostor" %}
+            <p>Eres el <strong>IMPOSTOR</strong>. No conoces la palabra.</p>
+        {% else %}
+            <p>Tu palabra es: <strong>{{ rol }}</strong></p>
+        {% endif %}
+    </div>
+    <form method="POST">
+        <button type="submit">Confirmar siguiente participante</button>
+    </form>
+</body>
+</html>
+
+

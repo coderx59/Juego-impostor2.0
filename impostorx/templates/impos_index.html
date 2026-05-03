@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego del Impostor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Juego del Impostor</h1>
+    <form method="POST">
+        <label for="cantidad">Número de participantes:</label>
+        <input type="number" name="cantidad" min="2" max="10" required>
+        <br><br>
+        <label>
+            <input type="checkbox" name="recordar">
+            Mantener este número para futuras rondas
+        </label>
+        <br><br>
+        <button type="submit">Guardar número</button>
+    </form>
+</body>
+</html>
